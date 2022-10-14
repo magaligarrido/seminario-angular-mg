@@ -1,0 +1,26 @@
+.container {
+    min-height: 90vh;
+}
+
+.form-nav {
+    width: 100%;
+
+    @media screen and (min-width:992px) {
+        width: 40%;
+    }
+
+    @media screen and (min-width:1200px) {
+        width: 35%;
+    }
+}
+
+.navbar-brand {
+    color: #f27f01;
+}
+
+.footer {
+    padding: 18px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #f27f01;
+}
