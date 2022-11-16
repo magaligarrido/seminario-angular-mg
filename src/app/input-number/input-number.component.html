@@ -1,0 +1,10 @@
+<div>
+    <button type="button" class="btn btn-light" (click)="restarCantidad()">-</button>
+    <input 
+        class="input-number"
+        type="text" 
+        [(ngModel)]="cantidad" 
+        (keyup)="onChangeCantidad($event)"
+    >
+    <button type="button" class="btn btn-light" (click)="sumarCantidad()">+</button>
+</div>

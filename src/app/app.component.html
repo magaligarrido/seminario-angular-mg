@@ -1,46 +1,40 @@
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand mb-0 h1" href="#">{{title}}</a>
+    <a [routerLink]="['/']" class="navbar-brand mb-0 h1">{{title}}</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Books
           </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Nuevos lanzamientos</a></li>
-            <li><a class="dropdown-item" href="#">Más leidos</a></li>
+          <ul class="dropdown-menu">           
+            <li><a [routerLink]="['/']" class="dropdown-item">Top 10</a></li>
+            <li><a [routerLink]="['books/novedades']" class="dropdown-item">Novedades</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="#">Ver todos</a></li>
+            <li><a [routerLink]="['/']" class="dropdown-item">Ver todos</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contacto</a>
+          <a [routerLink]="['carrito']" class="nav-link active" aria-current="page">Carrito de compras</a>
         </li>
-      </ul>
-      <form class="d-flex form-nav" role="search">
-        <input class="form-control me-2" type="search" placeholder="Buscar por titulo, género o autor"
-          aria-label="Search">
-        <button class="btn btn-outline-secondary" type="submit">Buscar</button>
-      </form>
+        <li class="nav-item">
+          <a [routerLink]="['about']" class="nav-link" href="#">About us</a>
+        </li>
+      </ul>      
     </div>
   </div>
 </nav>
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class=" col-6">
-      <app-book-list></app-book-list>
+    <div class=" col-12">
+      <router-outlet></router-outlet>
     </div>
-    <div class="col-6"></div>
   </div>
 </div>
 

@@ -1,0 +1,31 @@
+<h2>Carrito de compras</h2>
+
+<table class="table">
+    <tr class="header-table">
+        <td style="width:5%"></td>
+        <td>Titulo</td>
+        <td style="width: 10%;">Cantidad</td>
+        <td style="width: 10%;">Precio</td>
+        <td style="width: 10%;">Importe</td>
+        <td style="width:5%"></td>
+    </tr>
+    <tr class="items-table" *ngFor="let book of books">
+        <td style="padding:0; "><img style="width: 100%; padding: 5px;" src="{{book.imagen}}" alt="img-book"></td>
+        <td>{{book.titulo}}</td>
+        <td>{{book.cantidad}}</td>
+        <td>{{book.precio}}</td>        
+        <td>{{book.cantidad * book.precio}}</td>
+        <td>
+            <button (click)="removeToCart(book)" style="border:none;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 25 25">
+                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                </svg>
+            </button>
+        </td>
+    </tr>
+</table>
+
+<div class="container-finalizar-compra">
+    <h4>Total: {{calcularTotal() | currency}}</h4>
+    <button type="button" class="btn btn-dark btn-lg">Finalizar compra</button>
+</div>
