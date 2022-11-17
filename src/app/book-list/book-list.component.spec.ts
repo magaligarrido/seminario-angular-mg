@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { BookListComponent } from './book-list.component';
+import { BookifyBooksComponent } from './book-list.component';
 
 describe('BookListComponent', () => {
-  let component: BookListComponent;
-  let fixture: ComponentFixture<BookListComponent>;
+  let component: BookifyBooksComponent;
+  let fixture: ComponentFixture<BookifyBooksComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BookListComponent ]
+      declarations: [ BookifyBooksComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BookListComponent);
+    fixture = TestBed.createComponent(BookifyBooksComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -21,3 +20,4 @@ describe('BookListComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

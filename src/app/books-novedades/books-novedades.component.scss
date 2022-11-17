@@ -1,6 +1,6 @@
 .container-novedades{
     width: 90%;
-    margin: 2% auto;    
+    margin: 2% auto;
 }
 
 .contenido-novedades{
@@ -14,7 +14,7 @@
 }
 
 .carousel{
-    width: 100%;
+    width: 60%;
     height: 100%;
 }
 
@@ -42,7 +42,6 @@
     }
     @media screen and (min-width:1024px) {
         width: 120%;
-        margin: 10%;
     }
 }
 
