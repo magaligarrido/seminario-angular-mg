@@ -24,18 +24,18 @@ export class BookifyBooksComponent implements OnInit {
     
   getAll() {
     this.BookDataService.getAllBooks()
-        .subscribe(books => this.books = books)  
+        .subscribe(books => this.books = books)      
   }
 
   getBooks() {
     return this.books;
   }
 
-  addToCart(book: Book): void {
-    this.BookDataService.addToCart(book);
-    this.cart.addToCart(book)
+  addToCart(book: Book): void { 
     book.stock -= book.cantidad;
-    book.cantidad = 0;
+    this.cart.addToCart(book)
+    this.BookDataService.updateBook(book)
+    .subscribe();
   }
 
   removeToCart(book: Book){

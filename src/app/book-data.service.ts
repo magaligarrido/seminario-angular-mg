@@ -27,26 +27,14 @@ export class BookDataService {
 
   public getAllBooks(): Observable<Book[]> {
     return this.http.get<Book[]>(URL)
-      .pipe(
-        tap((books: Book[]) => books.forEach(book => book.cantidad = 0))
-      );
   }
 
-  public addToCart(book:Book) : Observable<Book[]> {
-     return this.http.post<Book[]>(URL, book, httpOptions);
+  public updateBook(book:Book){
+    return this.http.put(URL+'/'+book.id, book)
   }
   
   public removeToCart(book:Book) {
     this.http.delete(URL + "/" + book.id);
   }
-
-  // public setCantidad(): Observable<Book[]> {
-  //   return this.http.get<Book[]>(URL);
-  // }
-
-  // getCart():Beer[]{
-  //   return this.beerList;
-  // }
-
  
 }
