@@ -11,6 +11,7 @@ import { BookifyAboutComponent } from './bookify-about/bookify-about.component';
 import { BooksCarritoComponent } from './books-carrito/books-carrito.component';
 import { BooksNovedadesComponent } from './books-novedades/books-novedades.component';
 import { InputNumberComponent } from './input-number/input-number.component';
+import { BookDescriptionComponent } from './book-description/book-description.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { InputNumberComponent } from './input-number/input-number.component';
     BookifyAboutComponent,
     BooksCarritoComponent,
     BooksNovedadesComponent,
-    InputNumberComponent
+    InputNumberComponent,
+    BookDescriptionComponent
   ],
   imports: [
     BrowserModule,

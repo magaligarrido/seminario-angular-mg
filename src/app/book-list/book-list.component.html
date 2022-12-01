@@ -7,27 +7,26 @@
                   <div class="col-md-4 container-img-card">
                     <img [src]="book.imagen" class="img-card img-fluid rounded-start" [alt]="book.titulo">
                   </div>
-                  <div class="col-md-7">
+                  <div class="contenido-info-card">
                         <div class="card-body">
-                            <h5 class="card-title">{{book.titulo}}</h5>
-                            <h6>{{book.autor}}</h6>
-                            <p>{{book.genero}}</p>
-                            <p class="card-text">{{book.precio | currency }}</p>
+                            <h3 class="card-title">{{book.titulo}}</h3>
+                            <h5>{{book.autor}}</h5>
+                            <p class="p-genero">{{book.genero}}</p>
+                            <h5 class="card-text precio-book">{{book.precio | currency }}</h5>
                         </div>       
                         <div class="container-buttons">
                             <div class="container-buttons-cart">
                                 <p class="card-text" *ngIf="book.stock == 0" style="width:100%; ">Sin stock</p>
-                                <app-input-number [(cantidad)]="book.cantidad" [max]="book.stock" *ngIf="book.stock > 0" (limite)="limite($event)"></app-input-number>              
-                                <button (click)="addToCart(book)" type="button" class="btn btn-light btn-add-cart" >Add to cart</button>
+                                <app-input-number [(cantidad)]="book.cantidad" [max]="book.stock" *ngIf="book.stock > 0" (limite)="limite($event)"></app-input-number>                                         <button (click)="addToCart(book)" *ngIf="book.stock > 0" type="button" class="btn btn-light btn-add-cart" >Add to cart</button>
                             </div>
                             <p class="card-text" *ngIf="book.stock > 0" style=" margin:0; opacity:0.5; "><small>{{book.stock}} disponibles</small></p>  
-                            <div class="container-buttons-fav">                    
-                            <button type="button" class="btn btn-outline-light">Details</button>
-                            <button (click)="favorito(book)" type="button" class="btn btn-outline-light" style="margin-left: 5%;" [ngClass]="{'favorito': book.favorito}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-                                </svg>
-                            </button>
+                            <div class="container-buttons-fav">    
+                                <app-book-description [book]="book"></app-book-description>             
+                                <button (click)="favorito(book)" type="button" class="btn btn-outline-light" style="margin-left: 5%;" [ngClass]="{'favorito': book.favorito}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                    </svg>
+                                </button>
                             </div>
                         </div>           
                   </div>
@@ -36,6 +35,7 @@
         </div>
     </div>
 </div>
+
 
 
 

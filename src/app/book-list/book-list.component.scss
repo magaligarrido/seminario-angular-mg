@@ -23,7 +23,7 @@
     }
 }
 
-.container-img-card{
+.container-img-card {
     height: 50vh;
     display: flex;
     margin: 2% 0;
@@ -46,11 +46,12 @@
     }
 
     @media screen and (min-width:1200px) {
-        max-width: 500px;
+        max-width: 780px;
     }
+
 }
 
-.contenido-card{
+.contenido-card {
     color: #ffffff;
     padding-bottom: 5%;
     
@@ -59,7 +60,39 @@
     }
 }
 
-.img-card{
+.card-body {
+    text-align: center;
+    max-height: 100%;
+
+    @media screen and (min-width:768px) {
+        text-align: left;
+        max-height: 50%;
+    }
+}
+
+.contenido-info-card {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-height: 100%;
+
+    @media screen and (min-width:768px) {
+        width: 65%;
+    }
+  
+}
+
+.card-tittle {
+    font-size: 2rem;
+}
+
+.p-genero{
+    margin: 1% 0;
+}
+
+.img-card {
     height: 100%;
     object-fit: cover;
     @media screen and (min-width:768px) {
@@ -67,24 +100,30 @@
     }
 }
 
-.container-buttons{
+.container-buttons {
     display: flex;
     margin: 0 5%;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.container-buttons-cart{
+.container-buttons-cart {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
 
-.container-buttons-fav{
-    margin: 8% 0 0 0;
+.container-buttons-fav {
+    margin: 6% 0 0 0;
+    display: flex;
+    justify-content: center;
+
+    @media screen and (min-width:768px) {
+        justify-content: flex-start;
+    }
 }
 
-.noDisponible{
+.noDisponible {
    opacity: 0.6;
 }
 

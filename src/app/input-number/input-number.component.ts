@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Book } from '../book-list/Book';
 
 @Component({
   selector: 'app-input-number',
