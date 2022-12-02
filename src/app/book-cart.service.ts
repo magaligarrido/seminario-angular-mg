@@ -16,9 +16,9 @@ export class BookCartService {
 
   addToCart(book: Book) {
     let item = this._cartList.find((i) => i.titulo == book.titulo);
+    book.enCarrito = true;
     if(!item){
       this._cartList.push({... book});
-      book.enCarrito = !book.enCarrito;
     } else {
       item.cantidad += book.cantidad;
     }
@@ -27,8 +27,7 @@ export class BookCartService {
 
   removeToCart(book: Book){
     let item = this._cartList.find((i) => i.titulo == book.titulo);
-    book.enCarrito = !book.enCarrito;
-
+    book.enCarrito = false;
     if(item){
       this._cartList = this._cartList.filter((i)=> i.titulo !== i.titulo);
     }

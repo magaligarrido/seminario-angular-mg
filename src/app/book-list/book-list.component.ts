@@ -31,18 +31,21 @@ export class BookifyBooksComponent implements OnInit {
     return this.books;
   }
 
+  updateBook(book:Book){
+    this.BookDataService.updateBook(book).subscribe();
+  }
+
   addToCart(book: Book): void { 
     book.stock -= book.cantidad;
     this.cart.addToCart(book)
-    this.BookDataService.updateBook(book)
-    .subscribe();
+    this.updateBook(book)
   }
 
   removeToCart(book: Book){
-    this.BookDataService.removeToCart(book);
-    this.cart.removeToCart(book)
-    this.getAll();
+    book.stock += book.cantidad;
     book.cantidad = 0;
+    this.cart.removeToCart(book)
+    this.updateBook(book)
   }
 
   limite(m: Number):void{

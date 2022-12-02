@@ -14,12 +14,15 @@ export class BooksCarritoComponent implements OnInit {
   constructor(private cart: BookCartService) {
     this.cart.items.subscribe(data => {
       this.books = data;
+      console.log('que traigo', this.books)
     });
   }
 
   removeToCart(book:Book) :void {
-    this.cart.removeToCart(book);
+    console.log('que voy a borrar', book)
     book.enCarrito = ! book.enCarrito;
+    book.cantidad = 0;
+    this.cart.removeToCart(book);  
   }
 
   ngOnInit(): void {

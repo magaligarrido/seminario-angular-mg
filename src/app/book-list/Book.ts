@@ -12,6 +12,7 @@ export interface Book {
     stock:number;
     favorito:boolean;
     cantidad:number;
+    cantidadEnCarrito:number;
     enCarrito: boolean;
     id?:number;
 }
